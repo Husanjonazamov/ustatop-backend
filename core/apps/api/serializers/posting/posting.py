@@ -1,27 +1,27 @@
 from rest_framework import serializers
 
-from core.apps.api.models import PostingModel
+from core.apps.api.models import PostingTypeModel
 
 
-class BasePostingSerializer(serializers.ModelSerializer):
+class BasePostingTypeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PostingModel
+        model = PostingTypeModel
         fields = [
             "id",
             "name",
         ]
 
 
-class ListPostingSerializer(BasePostingSerializer):
-    class Meta(BasePostingSerializer.Meta): ...
+class ListPostingTypeSerializer(BasePostingTypeSerializer):
+    class Meta(BasePostingTypeSerializer.Meta): ...
 
 
-class RetrievePostingSerializer(BasePostingSerializer):
-    class Meta(BasePostingSerializer.Meta): ...
+class RetrievePostingTypeSerializer(BasePostingTypeSerializer):
+    class Meta(BasePostingTypeSerializer.Meta): ...
 
 
-class CreatePostingSerializer(BasePostingSerializer):
-    class Meta(BasePostingSerializer.Meta):
+class CreatePostingTypeSerializer(BasePostingTypeSerializer):
+    class Meta(BasePostingTypeSerializer.Meta):
         fields = [
             "id",
             "name",

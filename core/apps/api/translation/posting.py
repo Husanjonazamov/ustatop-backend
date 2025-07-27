@@ -1,8 +1,8 @@
 from modeltranslation.translator import TranslationOptions, register
 
-from core.apps.api.models import PostingModel
+from core.apps.api.models import PostingTypeModel
 
 
-@register(PostingModel)
+@register(PostingTypeModel)
 class PostingTranslation(TranslationOptions):
     fields = []

@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django_core.models import AbstractBaseModel
 
 
-class CategoryModel(AbstractBaseModel):
+class FeatureModel(AbstractBaseModel):
     title = models.CharField(verbose_name=_("Nomi"), max_length=255)
 
     def __str__(self):
@@ -16,6 +16,6 @@ class CategoryModel(AbstractBaseModel):
         )
 
     class Meta:
-        db_table = "category"
-        verbose_name = _("CategoryModel")
-        verbose_name_plural = _("CategoryModels")
+        db_table = "feature"
+        verbose_name = _("FeatureModel")
+        verbose_name_plural = _("FeatureModels")

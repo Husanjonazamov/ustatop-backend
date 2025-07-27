@@ -1,11 +1,11 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
 
-from core.apps.api.models import PostingTypeModel
+from core.apps.api.models import FeatureModel
 
 
-@admin.register(PostingTypeModel)
-class PostingAdmin(ModelAdmin):
+@admin.register(FeatureModel)
+class FeatureAdmin(ModelAdmin):
     list_display = (
         "id",
         "__str__",

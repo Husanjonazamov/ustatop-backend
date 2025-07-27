@@ -2,21 +2,21 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APIClient
 
-from core.apps.api.models import PostingTypeModel
+from core.apps.api.models import FeatureModel
 
 
-class PostingTest(TestCase):
+class FeatureTest(TestCase):
 
     def _create_data(self):
-        return PostingTypeModel._create_fake()
+        return FeatureModel._create_fake()
 
     def setUp(self):
         self.client = APIClient()
         self.instance = self._create_data()
         self.urls = {
-            "list": reverse("posting-list"),
-            "retrieve": reverse("posting-detail", kwargs={"pk": self.instance.pk}),
-            "retrieve-not-found": reverse("posting-detail", kwargs={"pk": 1000}),
+            "list": reverse("feature-list"),
+            "retrieve": reverse("feature-detail", kwargs={"pk": self.instance.pk}),
+            "retrieve-not-found": reverse("feature-detail", kwargs={"pk": 1000}),
         }
 
     def test_create(self):
