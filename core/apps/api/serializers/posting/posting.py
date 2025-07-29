@@ -1,15 +1,22 @@
 from rest_framework import serializers
 
 from core.apps.api.models import PostingTypeModel
-
+from core.apps.api.serializers.feature import BaseFeatureSerializer
 
 class BasePostingTypeSerializer(serializers.ModelSerializer):
+    feature = serializers.SerializerMethodField()
+    
     class Meta:
         model = PostingTypeModel
         fields = [
             "id",
-            "name",
+            "title",
+            "price",
+            "feature",
         ]
+        
+    def get_feature(self, obj):
+        return BaseFeatureSerializer(obj.feature).data
 
 
 class ListPostingTypeSerializer(BasePostingTypeSerializer):
@@ -24,5 +31,7 @@ class CreatePostingTypeSerializer(BasePostingTypeSerializer):
     class Meta(BasePostingTypeSerializer.Meta):
         fields = [
             "id",
-            "name",
+            "title",
+            "price",
+            "feature",
         ]

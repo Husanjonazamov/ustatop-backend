@@ -8,7 +8,7 @@ class BaseFeatureSerializer(serializers.ModelSerializer):
         model = FeatureModel
         fields = [
             "id",
-            "name",
+            "title",
         ]
 
 
@@ -24,5 +24,5 @@ class CreateFeatureSerializer(BaseFeatureSerializer):
     class Meta(BaseFeatureSerializer.Meta):
         fields = [
             "id",
-            "name",
+            "title",
         ]

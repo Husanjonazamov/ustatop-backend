@@ -8,7 +8,15 @@ class BaseListingSerializer(serializers.ModelSerializer):
         model = ListingModel
         fields = [
             "id",
-            "name",
+            "address",
+            "full_name",
+            "contact_time",
+            "category",
+            "posting_type",
+            "price",
+            "age",
+            "bio",
+            "image",
         ]
 
 
@@ -24,5 +32,13 @@ class CreateListingSerializer(BaseListingSerializer):
     class Meta(BaseListingSerializer.Meta):
         fields = [
             "id",
-            "name",
+            "address",
+            "full_name",
+            "contact_time",
+            "category",
+            "posting_type",
+            "price",
+            "age",
+            "bio",
+            "image",
         ]
