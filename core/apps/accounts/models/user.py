@@ -11,6 +11,8 @@ class User(auth_models.AbstractUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     validated_at = models.DateTimeField(null=True, blank=True)
+    telegram = models.CharField(max_length=200)
+    
     role = models.CharField(
         max_length=255,
         choices=RoleChoice,

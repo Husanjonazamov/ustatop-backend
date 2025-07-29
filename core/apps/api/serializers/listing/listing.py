@@ -13,10 +13,13 @@ class BaseListingSerializer(serializers.ModelSerializer):
             "contact_time",
             "category",
             "posting_type",
+            "specialty",
             "price",
             "age",
             "bio",
-            "image",
+            "phone",
+            "telegram",
+            "image"
         ]
 
 
@@ -37,8 +40,11 @@ class CreateListingSerializer(BaseListingSerializer):
             "contact_time",
             "category",
             "posting_type",
+            "specialty",
             "price",
             "age",
             "bio",
+            "phone",
+            "telegram",
             "image",
         ]

@@ -9,7 +9,8 @@ class UserSerializer(serializers.ModelSerializer):
             "updated_at",
             "password",
             "groups",
-            "user_permissions"
+            "user_permissions",
+            "telegram",
         ]
         model = get_user_model()
 

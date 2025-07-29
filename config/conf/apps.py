@@ -6,6 +6,7 @@ APPS = [
     
     
     
+    "payme",
     "drf_spectacular",
     "rest_framework",
     "corsheaders",
