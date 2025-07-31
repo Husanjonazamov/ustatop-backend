@@ -7,24 +7,40 @@ PAGES = [
         "items": [
             {
                 "title": _("Home page"),
-                "icon": "home",
+                "icon": "home",  # MSO: home
                 "link": reverse_lazy("admin:index"),
             }
         ],
     },
     {
-        "title": _("Auth"),
-        "separator": True,  # Top border
+        "title": _("Foydalanuvchilar"),
+        "separator": True,
         "items": [
             {
-                "title": _("Users"),
-                "icon": "group",
-                "link": reverse_lazy("admin:http_user_changelist"),
+                "title": _("Foydalanuvchilar"),
+                "icon": "group",  # MSO: group
+                "link": reverse_lazy("admin:accounts_user_changelist"),
+            },
+        ],
+    },
+    {
+        "title": _("E'lonlar"),
+        "separator": True,
+        "items": [
+            {
+                "title": _("Elonlar"),
+                "icon": "campaign",
+                "link": reverse_lazy("admin:api_listingmodel_changelist"),
             },
             {
-                "title": _("Group"),
-                "icon": "group",
-                "link": reverse_lazy("admin:auth_group_changelist"),
+                "title": _("Elon Tarifi"),
+                "icon": "description",  # MSO: description (yoki 'article')
+                "link": reverse_lazy("admin:api_postingtypemodel_changelist"),
+            },
+            {
+                "title": _("Avzalliklar"),
+                "icon": "star",  # MSO: star (yoki 'grade', 'local_fire_department')
+                "link": reverse_lazy("admin:api_featuremodel_changelist"),
             },
         ],
     },

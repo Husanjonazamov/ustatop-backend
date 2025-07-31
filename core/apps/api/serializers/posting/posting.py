@@ -16,7 +16,7 @@ class BasePostingTypeSerializer(serializers.ModelSerializer):
         ]
         
     def get_feature(self, obj):
-        return BaseFeatureSerializer(obj.feature).data
+        return BaseFeatureSerializer(obj.feature, many=True).data
 
 
 class ListPostingTypeSerializer(BasePostingTypeSerializer):
